@@ -18,7 +18,12 @@ public class CalculateWorker {
 				System.out.println("GoodBye");
 				break;
 			}
-			calc.exec(expression);
+			try {
+				String result = calc.exec(expression);
+				System.out.println("Result: " + result);
+			} catch (Exception e) {
+				System.out.println("Error occured: " + e.getMessage());			
+			}
 		}
 		in.close();
 	}
